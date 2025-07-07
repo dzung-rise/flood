@@ -6,9 +6,9 @@ build-backend = "flit_core.buildapi"
 [project]
 name = "paradigm-flood"
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.10,<4"
 dynamic = ["version", "description"]
-license = {text = "MIT OR Apache-2.0"}
+license = { text = "MIT OR Apache-2.0" }
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Developers",
@@ -41,9 +41,10 @@ dependencies = [
     'requests >=2.20.0, <3',
     'toolcli >=0.6.16, <0.7',
     'toolplot >= 0.3.4, <0.4',
-    'toolstr >=0.9.7, <0.10',
+    'toolstr == 0.9.7',
     'tqdm >=4.65.0, <5',
     'typing-extensions >=4.2.0, <5',
+    'lxml_html_clean == 0.4.1',
 ]
 
 [project.optional-dependencies]
@@ -67,9 +68,7 @@ implicit_reexport = true
 files = ["flood"]
 
 [tool.pytest.ini_options]
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
 asyncio_mode = 'auto'
 
 [tool.black]
@@ -80,4 +79,10 @@ target-version = ['py37']
 [tool.ruff]
 line-length = 80
 ignore = ["F403"]
+
+[tool.poetry]
+name = "paradigm-flood"
+version = "0.1.0"
+description = "Paradigm Flood is a Python library for benchmarking."
+package-mode = false
 

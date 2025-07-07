@@ -6,8 +6,8 @@ import flood
 
 
 def get_all_equality_tests(
-    start_block: int = 10_000_000,
-    end_block: int = 16_000_000,
+    start_block: int = 100_000,
+    end_block: int = 1_600_000,
     range_size: int = 100,
     random_seed: flood.RandomSeed | None = None,
 ) -> typing.Sequence[flood.EqualityTest]:

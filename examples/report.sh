@@ -1,8 +1,12 @@
 #!/bin/bash
 
-export TEST_DATA_DIR=/path/to/some/output/dir
-export NODE1=username@ip.address.1:localhost:8545
-export NODE2=username@ip.address.2:localhost:8545
+export TEST_DATA_DIR=./test_from_local
+# from local
+export NIRVANA=testnet.riselabs.xyz
+export RISE=rise.nirvanalabs.xyz/rise-main-ghfs3?apikey=a527f264aee1c9762b7da061c1f461cf2ff0
+
+# RATES=1024 2048 4096 8192 16384
+RATES="1000 2000 4000 6000 8000 16000"
 
 #
 # # run tests
@@ -12,56 +16,50 @@ flood eth_call \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_call \
-    -r 1024 2048 4096 8192 16384
+    -r $RATES
 
 flood eth_getBalance \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getBalance \
     -d 1 \
-    -r 1024 2048 4096 8192 16384
+    -r $RATES
 
 flood eth_getBlockByNumber \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getBlockByNumber \
-    -r 1024 2048 4096 8192 16384
+    -r $RATES
 
 flood eth_getCode \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getCode \
-    -r 1024 2048 4096 8192 16384
+    -r $RATES
 
 flood eth_getLogs \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getLogs \
-    -r 64 128 256 512 1024
+    -r $RATES
 
 flood eth_getStorageAt \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getStorageAt \
-    -r 1024 2048 4096 8192 16384
+    -r $RATES
 
 flood eth_getTransactionByHash \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getTransactionByHash \
-    -r 1024 2048 4096 8192 16384
-
-flood eth_getTransactionCount \
-    node1=$NODE1 \
-    node2=$NODE2 \
-    --output $TEST_DATA_DIR/eth_getTransactionCount \
-    -r 2048 4096 8192 16384 32768
+    -r $RATES
 
 flood eth_getTransactionReceipt \
     node1=$NODE1 \
     node2=$NODE2 \
     --output $TEST_DATA_DIR/eth_getTransactionReceipt \
-    -r 1024 2048 4096 8192 16384
+    -r $RATES
 
 #
 # # generate report
@@ -77,6 +75,4 @@ flood report \
     $TEST_DATA_DIR/eth_getLogs \
     $TEST_DATA_DIR/eth_getStorageAt \
     $TEST_DATA_DIR/eth_getTransactionByHash \
-    $TEST_DATA_DIR/eth_getTransactionCount \
     $TEST_DATA_DIR/eth_getTransactionReceipt
-

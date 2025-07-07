@@ -1,4 +1,3 @@
-
 # specific files
 CHANGELOG.md
 ROADMAP.md
@@ -25,3 +24,7 @@ graveyard.py
 
 *.ipynb
 *.html
+
+examples/test_from_local*
+
+results/
