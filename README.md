@@ -136,3 +136,7 @@ If you want to save the timing information and raw contents of every single resp
 
 Contributions are welcome in the form of issues, PR's, and commentary. Check out the contributor guide in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+## RISE
+```
+export FLOOD_SAMPLES_DIR=rise_samples
+```

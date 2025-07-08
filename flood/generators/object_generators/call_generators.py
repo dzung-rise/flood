@@ -115,7 +115,7 @@ def generate_calls_eth_get_eth_balance(
             raise Exception('must floodify more parameters')
         block_numbers = block_generators.generate_block_numbers(
             start_block=100_000,
-            end_block=1_600_000,
+            end_block=569_8430,
             n=n_calls,
             random_seed=random_seed,
             network=network,
@@ -152,7 +152,7 @@ def generate_calls_eth_get_transaction_count(
             raise Exception('must floodify more parameters')
         block_numbers = block_generators.generate_block_numbers(
             start_block=100_000,
-            end_block=1_600_000,
+            end_block=569_8430,
             n=n_calls,
             random_seed=random_seed,
             network=network,
@@ -234,10 +234,10 @@ def generate_calls_eth_get_transaction_receipt(
 #
 
 _default_contracts = {
-    # 'USDC': '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48',
-    # 'DAI': '0x6b175474e89094c44da98b954eedeac495271d0f',
+    'USDC': '0x78dF2727f0340209080E0f4d2B3D52D5e5B12600',
+    'DAI': '0x648fA5431Df037D1c6c8271FD7eF5AbB3150b9Ae',
     # 'LUSD': '0x5f98805a4e8be255a32880fdec7f6728c6568ba0',
-    'KAT': '0x0c5d542EBDa07aD40397Af4C00ad8A136D987470',
+    # 'KAT': '0x0c5d542EBDa07aD40397Af4C00ad8A136D987470',
 }
 
 _default_event_hashes = {
@@ -259,7 +259,7 @@ def generate_calls_eth_get_logs(
     import ctc.rpc
 
     if contract_address is None:
-        contract_address = _default_contracts['KAT']
+        contract_address = _default_contracts['USDC']
     if block_ranges is None:
         if n_calls is None:
             raise Exception('must floodify more parameters')
@@ -267,7 +267,7 @@ def generate_calls_eth_get_logs(
             block_range_size = 100
         block_ranges = block_generators.generate_block_ranges(
             start_block=100_000,
-            end_block=1_600_000,
+            end_block=569_8430,
             n=n_calls,
             range_size=block_range_size,
             random_seed=random_seed,
@@ -307,7 +307,7 @@ def generate_calls_eth_get_code(
             raise Exception('must floodify more parameters')
         block_numbers = block_generators.generate_block_numbers(
             start_block=100_000,
-            end_block=1_600_000,
+            end_block=569_8430,
             n=n_calls,
             random_seed=random_seed,
             network=network,
@@ -344,7 +344,7 @@ def generate_calls_eth_get_storage_at(
             raise Exception('must floodify more parameters')
         block_numbers = block_generators.generate_block_numbers(
             start_block=100_000,
-            end_block=1_600_000,
+            end_block=569_8430,
             n=n_calls,
             random_seed=random_seed,
             network=network,
@@ -391,7 +391,7 @@ def generate_calls_eth_call(
     )
     block_numbers = block_generators.generate_block_numbers(
         start_block=100_000,
-        end_block=1_600_000,
+        end_block=569_843,
         n=n_calls,
         random_seed=random_seed,
         network=network,
@@ -430,7 +430,7 @@ def generate_calls_trace_block(
             n=n_calls,
             random_seed=0,
             start_block=0,
-            end_block=1_600_000,
+            end_block=569_8430,
             network=network,
         )
     return [
@@ -480,7 +480,7 @@ def generate_calls_trace_replay_block_transactions(
             n=n_calls,
             random_seed=random_seed,
             start_block=0,
-            end_block=1_600_000,
+            end_block=569_8430,
             network=network,
         )
     return [
@@ -508,7 +508,7 @@ def generate_calls_trace_replay_block_transactions_state_diff(
             n=n_calls,
             random_seed=random_seed,
             start_block=0,
-            end_block=1_600_000,
+            end_block=569_8430,
             network=network,
         )
     return [
@@ -536,7 +536,7 @@ def generate_calls_trace_replay_block_transactions_vm_trace(
             n=n_calls,
             random_seed=random_seed,
             start_block=0,
-            end_block=1_600_000,
+            end_block=569_8430,
             network=network,
         )
     return [

@@ -27,4 +27,5 @@ graveyard.py
 
 examples/test_from_local*
 
+!data.ipynb
 results/
